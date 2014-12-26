@@ -34,8 +34,8 @@ var Flake = function(container, image)
 
   var generateStyle = function()
   {
-		container_height = container.height();
-		container_width = container.width();
+		container_height = container.offsetHeight;
+		container_width = container.offsetWidth;
     size = rand(10, 30);
     x = rand(size, container_width);
     y = 0 - size;
@@ -95,7 +95,7 @@ var Flake = function(container, image)
 
 	this.display = function()
 	{
-		container.append(flake);
+		container.appendChild(flake);
 	}
 
 	this.animate = function() 
@@ -124,6 +124,7 @@ var Snow = function(container, count, image)
 {
 	var flake = new Array();
 	var animation = null;
+	container = document.getElementById(container);
 
 	for(var i = 0; i < count; i++)
 	{
@@ -160,12 +161,6 @@ var Snow = function(container, count, image)
 
 	animate();
 
-}
-
-
-$.fn.Snow = function(count, image) 
-{
-	return new Snow(this, count, image);
 }
 
 
