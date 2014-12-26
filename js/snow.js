@@ -2,6 +2,11 @@
 
 var Flake = function(container, image)
 {
+
+ /**
+  * by Profesor08
+  */
+
 	var flake = null; // html element
 	var x = 0;
 	var y = 0;
@@ -32,41 +37,41 @@ var Flake = function(container, image)
 		return (Math.random() * (min - max) + max);
 	}
 
-  var generateStyle = function()
-  {
+	var generateStyle = function()
+	{
 		container_height = container.offsetHeight;
 		container_width = container.offsetWidth;
-    size = rand(10, 30);
-    x = rand(size, container_width);
-    y = 0 - size;
-    x_step = 0;
-    x_step_size = rand(1, 10) / 100;
-    y_step = frand(1, 5);
-    rotate = rand(-1, 1);
-    rotate_speed = 1 + Math.random() * (2 - 1);
-    direction = frand(-1.5, 1.5);
-    flip_speed = 0;
-    flip = 0;
-    if (rand(0, 100) < 30)
-    {
-    	flip_speed = frand(30, 50) / 10;
-    }
-  }
+		size = rand(10, 30);
+		x = rand(size, container_width);
+		y = 0 - size;
+		x_step = 0;
+		x_step_size = rand(1, 10) / 100;
+		y_step = frand(1, 5);
+		rotate = rand(-1, 1);
+		rotate_speed = 1 + Math.random() * (2 - 1);
+		direction = frand(-1.5, 1.5);
+		flip_speed = 0;
+		flip = 0;
+		if (rand(0, 100) < 30)
+		{
+			flip_speed = frand(30, 50) / 10;
+		}
+	}
 
-  var animationStep = function()
-  {
-    y += y_step;
-    x_step += x_step_size;
-    x += Math.cos(x_step);
-    x += direction;
-    if (rotate >= 0) rotate += rotate_speed;
-    else rotate -= rotate_speed;
-    flip += flip_speed;
-    if (flip >= 360) flip = 0;
-    if (flip >= 170 && flip <= 180) flip = 190;
-    if (y >= container_height) generateStyle();
-    if (x >= container_width) generateStyle();
-  }
+	var animationStep = function()
+	{
+		y += y_step;
+		x_step += x_step_size;
+		x += Math.cos(x_step);
+		x += direction;
+		if (rotate >= 0) rotate += rotate_speed;
+		else rotate -= rotate_speed;
+		flip += flip_speed;
+		if (flip >= 360) flip = 0;
+		if (flip >= 170 && flip <= 180) flip = 190;
+		if (y >= container_height) generateStyle();
+		if (x >= container_width) generateStyle();
+	}
 
 	this.run = function()
 	{
@@ -122,44 +127,49 @@ var Flake = function(container, image)
 
 var Snow = function(container, count, image)
 {
-	var flake = new Array();
-	var animation = null;
-	container = document.getElementById(container);
 
-	for(var i = 0; i < count; i++)
-	{
-		flake.push(new Flake(container, image));
-	}
+ /**
+  * by Profesor08
+  */
+  
+  var flake = new Array();
+  var animation = null;
+  container = document.getElementById(container);
 
-	var animate = function()
-	{
-		for(var i = 0; i < flake.length; i++)
-		{
-			flake[i].animate();
-		}
+  for(var i = 0; i < count; i++)
+  {
+  	flake.push(new Flake(container, image));
+  }
 
-		animation = requestAnimationFrame(animate);
-	}
+  var animate = function()
+  {
+  	for(var i = 0; i < flake.length; i++)
+  	{
+  		flake[i].animate();
+  	}
 
-	this.stop = function()
-	{
-		cancelAnimationFrame(animation);
-		for(var i = 0; i < flake.length; i++)
-		{
-			flake[i].hide();
-		}
-	}
+  	animation = requestAnimationFrame(animate);
+  }
 
-	this.start = function()
-	{
-		for(var i = 0; i < flake.length; i++)
-		{
-			flake[i].show();
-		}
-		animate();
-	}
+  this.stop = function()
+  {
+  	cancelAnimationFrame(animation);
+  	for(var i = 0; i < flake.length; i++)
+  	{
+  		flake[i].hide();
+  	}
+  }
 
-	animate();
+  this.start = function()
+  {
+  	for(var i = 0; i < flake.length; i++)
+  	{
+  		flake[i].show();
+  	}
+  	animate();
+  }
+
+  animate();
 
 }
 
