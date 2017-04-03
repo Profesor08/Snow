@@ -19,7 +19,7 @@
   <script type="text/javascript" src="js/Snowfall.js"></script>
   
   <style type="text/css">
-    #snowfall {
+    #snowfall-canvas {
       width: 100%;
       height: 650px;
     }
@@ -54,14 +54,14 @@
   
     <div id="example"></div>
     <h2>Look at this Snowfall</h2>
-    <canvas id="snowfall"></canvas>
+    <canvas id="snowfall-canvas"></canvas>
   
   </section>
 
 </div>
 
 <script type="text/javascript">
-  let snow = new Snowfall("#snowfall", {
+  let snow = new Snowfall("#snowfall-canvas", {
     images: [
       "img/flake1.png",
       "img/flake2.png",
