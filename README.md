@@ -2,12 +2,13 @@
 
 Snowfall animation for your website
 
-## Installation
+### Installation
 ```html
 <script type="text/javascript" src="js/Flake.js"></script>
 <script type="text/javascript" src="js/Snowfall.js"></script>
 ```
 
+### Usage
 ```javascript
 let snow = new Snowfall("#snowfall", {
     images: [
