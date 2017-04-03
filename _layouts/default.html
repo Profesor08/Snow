@@ -64,7 +64,7 @@
 </div>
 
 <script type="text/javascript">
-  new Snowfall("#snowfall", {
+  let snow = new Snowfall("#snowfall", {
     images: [
       "img/flake1.png",
       "img/flake2.png",
@@ -76,6 +76,8 @@
     ],
     count: 250
   });
+  
+  snow.start();
 </script>
 
 {% if site.google_analytics %}
