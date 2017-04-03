@@ -41,8 +41,8 @@ class Snowfall
       }));
     });
 
-    this.updateCanvasSize();
-    window.addEventListener("resize", () => this.updateCanvasSize());
+    //this.updateCanvasSize();
+    //window.addEventListener("resize", () => this.updateCanvasSize());
   }
 
   updateCanvasSize()
