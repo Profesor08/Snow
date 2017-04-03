@@ -41,14 +41,18 @@ class Snowfall
       }));
     });
 
-    //this.updateCanvasSize();
-    //window.addEventListener("resize", () => this.updateCanvasSize());
+    this.updateCanvasSize();
+    window.addEventListener("resize", () => this.updateCanvasSize());
   }
 
   updateCanvasSize()
   {
-    this.ctx.canvas.width = this.ctx.canvas.parentNode.offsetWidth;
-    this.ctx.canvas.height = this.ctx.canvas.parentNode.offsetHeight;
+    // this.ctx.canvas.width = this.ctx.canvas.parentNode.offsetWidth;
+    // this.ctx.canvas.height = this.ctx.canvas.parentNode.offsetHeight;
+
+    this.ctx.canvas.width = this.ctx.canvas.offsetWidth;
+    this.ctx.canvas.height = this.ctx.canvas.offsetHeight;
+
     this.options.halfHorizontal = this.ctx.canvas.width / 2;
     this.options.halfVertical = this.ctx.canvas.height / 2;
   }
