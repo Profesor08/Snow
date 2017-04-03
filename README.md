@@ -1,16 +1,28 @@
-Snow
-====
+# Snowfall
 
-Snow animation for web site
+## Installation
+```html
+<script type="text/javascript" src="js/Flake.js"></script>
+<script type="text/javascript" src="js/Snowfall.js"></script>
+```
 
-Simple, easy to use.
-
-Using:
-Snow(container_id, flakes_count, images_path);
-
-
-Ex: Snow("snow", 100, "img");
-
-Images flake[1..8].png are in img folder
-
-
+```javascript
+let snow = new Snowfall("#snowfall", {
+    images: [
+      "img/flake1.png",
+      "img/flake2.png",
+      "img/flake3.png",
+      "img/flake4.png",
+      "img/flake5.png",
+      "img/flake6.png",
+      "img/flake7.png"
+    ],
+    count: 250,
+    size: {
+      min: 10,
+      max: 30
+    }
+});
+  
+snow.start();
+```
