@@ -1,5 +1,7 @@
 # Snowfall
 
+Snowfall animation for your website
+
 ## Installation
 ```html
 <script type="text/javascript" src="js/Flake.js"></script>
