@@ -43,10 +43,27 @@
     </div>
     
     {{ content }}
+    
+    <canvas class="snowfall"></canvas>
   
   </section>
 
 </div>
+
+<script type="text/javascript">
+  new Snowfall("#snowfall", {
+    images: [
+      "img/flake1.png",
+      "img/flake2.png",
+      "img/flake3.png",
+      "img/flake4.png",
+      "img/flake5.png",
+      "img/flake6.png",
+      "img/flake7.png"
+    ],
+    count: 250
+  });
+</script>
 
 {% if site.google_analytics %}
 <script type="text/javascript">

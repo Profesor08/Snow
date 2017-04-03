@@ -91,16 +91,3 @@ class Flake {
   }
 
 }
-
-new Snowfall("#" + this.snowButton.canvas_id, {
-  images: [
-    "assets/images/flakes/flake1.png",
-    "assets/images/flakes/flake2.png",
-    "assets/images/flakes/flake3.png",
-    "assets/images/flakes/flake4.png",
-    "assets/images/flakes/flake5.png",
-    "assets/images/flakes/flake6.png",
-    "assets/images/flakes/flake7.png"
-  ],
-  count: 250
-});
